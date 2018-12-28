@@ -77,7 +77,7 @@ public:
 	int getJudge(); // 勝敗を返す
 	int listup(MOVE *movelist, TURN turn); // 合法手を列挙
 	bool check(int x1, int y1, int x2, int y2, TURN turn); // 合法手かどうかチェック
-	inline bool check(MOVE move, TURN turn) { check(move.x1, move.y1, move.x2, move.y2, turn); }
+	inline bool check(MOVE move, TURN turn) { return check(move.x1, move.y1, move.x2, move.y2, turn); }
 };
 
 #endif

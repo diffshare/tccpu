@@ -11,7 +11,7 @@ MOVE TCCPU_Human::turn(TCField *field, TURN turn) {
 		fgets(buf, 256, stdin);
 		if(strlen(buf) <= 2) {
 			// ‹ós‚ð“ü—Í‚µ‚½‚ç“Š—¹
-			return (MOVE){-1, -1, -1, -1};
+			return {-1, -1, -1, -1};
 		} else if(
 			   sscanf(buf, "%c%d,%c%d",  &cx1, &y1, &cx2, &y2) > 0
 			|| sscanf(buf, "%c%d, %c%d", &cx1, &y1, &cx2, &y2) > 0
@@ -21,7 +21,7 @@ MOVE TCCPU_Human::turn(TCField *field, TURN turn) {
 			y1 -= 1; y2 -= 1;
 
 			if(field -> check(x1, y1, x2, y2, turn)) {
-				return (MOVE){x1, y1, x2, y2};
+				return {x1, y1, x2, y2};
 			} else {
 				printf("invalid move? (%d, %d) -> (%d, %d)\n", x1, y1, x2, y2);
 			}
