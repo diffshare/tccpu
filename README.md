@@ -3,8 +3,13 @@ This is a TowerChess CPU programs made by C++.
 
 ## how to build
 
+need CMake.
+
 ```shell
-make all
+$ mkdir build
+$ cd build
+$ cmake ..
+$ cmake --build .
 ```
 
 ## how to run
